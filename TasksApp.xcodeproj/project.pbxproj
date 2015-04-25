@@ -17,7 +17,7 @@
 		CEB6C1341AE12CD7009C9ACC /* TasksListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6C1331AE12CD7009C9ACC /* TasksListsViewController.swift */; };
 		CEB6C1391AE12CD7009C9ACC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB6C1381AE12CD7009C9ACC /* Images.xcassets */; };
 		CEB6C1481AE12CD7009C9ACC /* TasksAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6C1471AE12CD7009C9ACC /* TasksAppTests.swift */; };
-		CEB6C1521AE1359C009C9ACC /* DummyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6C1511AE1359C009C9ACC /* DummyModel.swift */; };
+		CEB6C1521AE1359C009C9ACC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6C1511AE1359C009C9ACC /* Model.swift */; };
 		CEB6C1551AE13B16009C9ACC /* TasksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6C1541AE13B16009C9ACC /* TasksListCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +48,7 @@
 		CEB6C1411AE12CD7009C9ACC /* TasksAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasksAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB6C1461AE12CD7009C9ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB6C1471AE12CD7009C9ACC /* TasksAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAppTests.swift; sourceTree = "<group>"; };
-		CEB6C1511AE1359C009C9ACC /* DummyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyModel.swift; sourceTree = "<group>"; };
+		CEB6C1511AE1359C009C9ACC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CEB6C1541AE13B16009C9ACC /* TasksListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,7 +139,7 @@
 		CEB6C1531AE135A1009C9ACC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CEB6C1511AE1359C009C9ACC /* DummyModel.swift */,
+				CEB6C1511AE1359C009C9ACC /* Model.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA64D641AEB3E2200F6364F /* GTLNetworking_Sources.m in Sources */,
-				CEB6C1521AE1359C009C9ACC /* DummyModel.swift in Sources */,
+				CEB6C1521AE1359C009C9ACC /* Model.swift in Sources */,
 				CEB6C1551AE13B16009C9ACC /* TasksListCell.swift in Sources */,
 				CEB6C1341AE12CD7009C9ACC /* TasksListsViewController.swift in Sources */,
 				CEA64D631AEB3E2200F6364F /* GTLCommon_Sources.m in Sources */,

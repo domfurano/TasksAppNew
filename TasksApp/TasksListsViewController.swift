@@ -8,17 +8,9 @@
 
 import UIKit
 
-class TaskListsViewController: UITableViewController {
+class TaskListsViewController: UITableViewController, FinishedPresentingAuthViewControllerDelegate {
     
     var listManager = ListManager()
-    var addingNewList: Bool = false
-    
-    let tasksService: GTLServiceTasks = GTLServiceTasks()
-    
-    let kKeychainItemName : String = "TasksApp"
-    let kClientID : String = "318945420422-i3kd09fanhadqgkth9u1tdfrpkbvf3mc.apps.googleusercontent.com"
-    let kClientSecret : String = "yjrFwfKmjja816XJs2RRZPcH"
-    let scope = "https://www.googleapis.com/auth/plus.me"
     
     
     override func loadView() {
@@ -53,13 +45,12 @@ class TaskListsViewController: UITableViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        listManager.finishedPresentingAuthViewControllerDelegate = self
         
         
-        self.tasksService.authorizer = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName(kKeychainItemName, clientID: kClientID, clientSecret: kClientSecret)
-        
-        if !isSignedIn() {
+        if !listManager.isSignedIn() {
             navigationController?.navigationBarHidden = true
-            navigationController?.pushViewController(createAuthController(), animated: true)
+            navigationController?.pushViewController(listManager.createAuthController(), animated: true)
         }
     }
 
@@ -68,30 +59,18 @@ class TaskListsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func isSignedIn() -> Bool {
-        return tasksService.authorizer.canAuthorize!
-    }
-
-    func createAuthController() -> GTMOAuth2ViewControllerTouch {
-        return GTMOAuth2ViewControllerTouch(scope: scope,
-            clientID: kClientID,
-            clientSecret: kClientSecret,
-            keychainItemName: self.kKeychainItemName,
-            delegate: self,
-            finishedSelector: Selector("viewController:finishedWithAuth:error:"))
-    }
     
-    func viewController(viewController: GTMOAuth2ViewControllerTouch, finishedWithAuth authResult: GTMOAuth2Authentication, error:NSError?) {
-        println("done presenting")
-        if error != nil {
-            println("Authentication Error")
-            self.tasksService.authorizer = nil
-        } else {
-            println("Authentication Success")
-            self.tasksService.authorizer = authResult
-        }
+    
+    
+    
+    
+    /* Model delegate methods. */
+    
+    func finishedPresentingAuthViewController() {
         navigationController?.navigationBarHidden = false
     }
+    
+
 
     
 
@@ -124,6 +103,11 @@ class TaskListsViewController: UITableViewController {
         // tap hold
         return false
     }
+    
+    
+    
+    
+    
     
     
     
